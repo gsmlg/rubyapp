@@ -1,11 +1,17 @@
 require.config({
-    baseUrl: "/js/vendor",
+    baseUrl: "/js/app",
     urlArgs: "_t=" + (new Date()).getTime(),
     paths: {
-        app: '../app'
+        'jquery': '../vendor/jquery',
+        'underscore': '../vendor/underscore',
+        'backbone': '../vendor/backbone',
+        'backbone.babysitter': '../vendor/backbone.babysitter',
+        'backbone.wreqr'.: '../vendor/backbone.wreqr',
+        'backbone.marionette': '../vendor/backbone.marionette',
+        'moment': '../vendor/moment',
     }
 });
 
-require(['app/app'], function(app) {
+require(['app'], function(app) {
     app.start();
 })

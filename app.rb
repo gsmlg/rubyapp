@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'sinatra/activerecord'
-require 'sinatra/reloader' if development?
+require 'sinatra/reloader'
 require 'erb'
 require 'json'
 
