@@ -14,7 +14,7 @@ class SassEngine < Sinatra::Base
 
   get '/css/*.css' do
     filename = params[:splat].first
-    halt 404 unless File.exists? settings.root + '/sass/' + filename + '.scss'
+    halt 404 unless File.exists? settings.root + '/scss/' + filename + '.scss'
     scss filename.to_sym
   end
 
@@ -57,6 +57,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
+    @title = "Sinatra Web App"
     erb :index
   end
 
