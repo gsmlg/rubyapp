@@ -9,6 +9,9 @@ gem 'haml'
 gem 'sass'
 gem 'compass'
 
+# coffee-script
+gem 'coffee-script'
+
 gem "sinatra-contrib"
 
 # database
