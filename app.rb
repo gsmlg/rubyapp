@@ -10,21 +10,23 @@ Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 
 class SassEngine < Sinatra::Base
 
-  set :views, File.dirname(__FILE__) + '/sass'
+  set :views, settings.root + '/scss'
 
   get '/css/*.css' do
     filename = params[:splat].first
-    sass filename.to_sym
+    halt 404 unless File.exists? settings.root + '/sass/' + filename + '.scss'
+    scss filename.to_sym
   end
 
 end
 
 class CoffeeEngine < Sinatra::Base
 
-  set :views, File.dirname(__FILE__) + '/coffeescript'
+  set :views, settings.root + '/coffeescript'
 
   get "/js/app/*.js" do
     filename = params[:splat].first
+    halt 404 unless File.exists? settings.root + '/coffeescript/' + filename + '.coffee'
     coffee filename.to_sym
   end
 
