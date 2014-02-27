@@ -23,7 +23,11 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <div id="layout">
         <%= yield %>
+        </div>
+
+        <%= erb :templates %>
 
         <script data-main="js/main.js" src="js/vendor/require.js"></script>
     </body>

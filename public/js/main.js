@@ -7,7 +7,17 @@ require.config({
         'backbone.babysitter': '../vendor/backbone.babysitter',
         'backbone.wreqr': '../vendor/backbone.wreqr',
         'backbone.marionette': '../vendor/backbone.marionette',
-        'moment': '../vendor/moment'
+        'moment': '../vendor/moment',
+        'ckeidtor': '../vendor/ckeditor/ckeditor',
+        'handlebars': '../vendor/handlebars'
+    },
+    shim: {
+        'ckeidtor': {
+            exports: 'CKEDITOR'
+        },
+        'handlebars': {
+            exports: 'Handlebars'
+        }
     }
 });
 

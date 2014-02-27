@@ -1,0 +1,65 @@
+<script id="layout" type="text/x-handlebars-template">
+<header id="header">
+</header>
+<div id="title">
+</div>
+<section id="content" class="container"><div class="row">
+	<section id="articles" class="col-md-9" role="main">
+	</section>
+	<aside class="col-md-3">
+	</aside>
+</div></section>
+
+<footer id="footer" role="contentinfo">
+	<div class="container">One Page One Application!</div>
+</footer>
+</script>
+
+<script id="tmpl-head" type="text/x-handlebars-template">
+	<nav class="navbar navbar-inverse" role="navigation">
+	  	<div class="container">
+		  	<div class="navbar-header">
+	  			<a href="/" class="navbar-brand">Home</a>
+	  		</div>
+	  		<div class="collapse navbar-collapse">
+			  	<ul class="nav navbar-nav">
+			  		<li>
+			  			<a href="/articles">Index</a>
+			  		</li>
+			  		<li>
+			  			<a href="/addArticles">Add</a>
+			  		</li>
+			  	</ul>
+		  	</div>
+	  	</div>
+	</nav>
+</script>
+
+
+<script id="tmpl-head" type="text/x-handlebars-template">
+	<div class="container">
+		<hgroup id="page-title">
+			<h1>一叶飘落</h1>
+			<h2>树大招风风撼树，人为名高名丧人</h2>
+		</hgroup>
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a class="active" href="#">List</a></li>
+		</ol>
+	</div>
+</script>
+
+<script id="tmpl-article" type="text/x-handlebars-template">
+	<article class="col-md-4 col-sm-6 col-mg-3">
+		<header class="article-title">
+			<h3>html5 语义标签</h3>
+			<time datetime="">2014-2-16</time>
+			<author>Me</author>
+		</header>
+		<div class="aritcle-description">
+			<p>新增&lt;header&gt;</p>
+			<p>新增&lt;footer&gt;</p>
+			<p><a>more...</a></p>
+		</div>
+	</article>
+</script>

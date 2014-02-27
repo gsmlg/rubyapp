@@ -4,33 +4,9 @@ require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require 'erb'
 require 'json'
-require 'coffee-script'
+require './view_engines'
 
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
-
-class SassEngine < Sinatra::Base
-
-  set :views, settings.root + '/scss'
-
-  get '/css/*.css' do
-    filename = params[:splat].first
-    halt 404 unless File.exists? settings.root + '/scss/' + filename + '.scss'
-    scss filename.to_sym
-  end
-
-end
-
-class CoffeeEngine < Sinatra::Base
-
-  set :views, settings.root + '/coffeescript'
-
-  get "/js/app/*.js" do
-    filename = params[:splat].first
-    halt 404 unless File.exists? settings.root + '/coffeescript/' + filename + '.coffee'
-    coffee filename.to_sym
-  end
-
-end
 
 
 
