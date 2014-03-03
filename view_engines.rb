@@ -2,12 +2,16 @@ require 'rubygems'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'coffee-script'
+require 'compass'
 require 'sass'
 
 
 class SassEngine < Sinatra::Base
 
   set :views, settings.root + '/scss'
+
+  set :scss, Compass.sass_engine_options
+  set :scss, { :load_paths => scss[:load_paths] + [ "#{settings.root}/scss" ] }
 
   get '/css/*.css' do
     filename = params[:splat].first

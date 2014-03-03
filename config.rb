@@ -4,14 +4,14 @@ require './app'
 project_path          = Sinatra::Application.root
 
 # HTTP paths
-http_path             = '/'
+http_path             = '/public'
 http_stylesheets_path = '/css'
 http_images_path      = '/img'
 http_javascripts_path = '/js'
 
 # File system locations
 css_dir               = File.join 'public', 'css'
-sass_dir              = File.join 'stylesheets'
+sass_dir              = File.join 'scss'
 images_dir            = File.join 'public', 'img'
 javascripts_dir       = File.join 'public', 'js'
 
