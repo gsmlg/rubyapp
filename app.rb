@@ -14,7 +14,6 @@ Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 class App < Sinatra::Base
   set :environment, :development
   set :sessions, true
-  set :database, 'sqlite:///db/posts.sqlite3'
   set :views, settings.root + '/views'
 
   use SassEngine

@@ -15,5 +15,7 @@ gem 'coffee-script'
 gem "sinatra-contrib"
 
 # database
+gem "activerecord"
 gem "sinatra-activerecord"
 gem "sqlite3"
+gem "mysql2"
