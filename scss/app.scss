@@ -1,4 +1,7 @@
 @import "compass/css3";
+html,body {
+    min-height: 100%;
+}
 
 #layout {
     width: 100%;

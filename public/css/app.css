@@ -1,0 +1,42 @@
+html, body {
+  min-height: 100%;
+}
+
+#layout {
+  width: 100%;
+  height: 100%;
+}
+
+#page-title {
+  padding: 1em 5em;
+  background: #ccc;
+}
+
+#page-title h1 {
+  font-weight: bold;
+  font-size: 5em;
+  font-family: microsoft yahei;
+}
+
+#page-title h2 {
+  text-indent: 2em;
+  color: #666;
+  font-size: 2em;
+  font-family: microsoft yahei;
+}
+
+footer {
+  color: #ccc;
+  padding: 0.5em 4em;
+  background-color: #101010;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.article-block {
+  margin: 10px 0;
+  padding: 15px 7px;
+  -webkit-box-shadow: rgba(16, 16, 16, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
+  -moz-box-shadow: rgba(16, 16, 16, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
+  box-shadow: rgba(16, 16, 16, 0.4) 0 0 25px, rgba(0, 128, 0, 0.2) 0 0 3px 1px inset;
+}
