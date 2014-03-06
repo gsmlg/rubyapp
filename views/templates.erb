@@ -85,12 +85,12 @@
 <script id="article-template" type="text/x-handlebars-template">
 	<article class="article-block">
 		<header class="article-title">
-			<h3>{{title}}</h3>
-			<time datetime="{{createTime}}">{{date}}</time>
-			<author>{{author}}</author>
+			<h3>{{post_title}}</h3>
+			<time datetime="{{post_data_gmt}}">{{post_date}}</time>
+			<author>{{post_author}}</author>
 		</header>
 		<div class="aritcle-description">
-			{{{description}}}
+			{{{post_content}}}
 		</div>
 	</article>
 </script>

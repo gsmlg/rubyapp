@@ -7,6 +7,8 @@ require 'erb'
 require 'json'
 require './view_engines'
 
+ActiveRecord::Base.table_name_prefix = 'wp_'
+
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 
 
@@ -50,7 +52,7 @@ class App < Sinatra::Base
   end
 
   get '/articles' do
-    getAritcles nil
+    Post.find(:all).to_json
   end
 
   get '/articles/:id' do
