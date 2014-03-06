@@ -3,8 +3,7 @@ define ['backbone.marionette'], (Marionette)->
 		className: "col-md-4 col-sm-6 col-mg-3"
 		template: "#article-template"
 
-
 	ArticlesView = Marionette.CollectionView.extend
 		tagName: "div"
-		className: "row container-fluid"
+		className: "row"
 		itemView: ArticleView
