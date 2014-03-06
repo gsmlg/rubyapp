@@ -6,5 +6,5 @@ define ['backbone.marionette'], (Marionette)->
 
 	ArticlesView = Marionette.CollectionView.extend
 		tagName: "div"
-		className: "row"
+		className: "row container-fluid"
 		itemView: ArticleView

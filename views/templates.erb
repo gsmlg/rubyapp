@@ -10,7 +10,7 @@
 	</div>
 </div>
 <section id="content" class="container">
-	<div class="row">
+	<div class="row container-fluid">
 		<section id="articles" class="col-md-9" role="main">
 		</section>
 		<aside id="article-aside" class="col-md-3">
@@ -23,46 +23,46 @@
 </script>
 
 <script id="head-nav-template" type="text/x-handlebars-template">
-	  	<div class="container-fluid">
-		  	<div class="navbar-header">
-		  		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-				</button>
-	  			<a href="/#" class="navbar-brand">Home</a>
-	  		</div>
-	  		<div class="collapse navbar-collapse">
-			  	<ul id="header-nav-links" class="nav navbar-nav">
-			  	</ul>
-			  	<ul class="nav navbar-nav navbar-right">
-			  		{{#ifCond role "===" "anonymous"}}
-			        <li><a>Anonymous</a></li>
-			        <li class="dropdown">
-			          <a class="dropdown-toggle">Login <b class="caret"></b></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="#"></a></li>
-			            <li><a href="#">Something else here</a></li>
-			          </ul>
-			        </li>
-			        {{else}}
-			        <li><a>{{username}}</a></li>
-			        <li class="dropdown">
-			          <a class="dropdown-toggle">UCenter <b class="caret"></b></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="#">User Home</a></li>
-			            <li><a href="#">Favor List</a></li>
-			            <li><a href="#">Collections</a></li>
-			            <li><a href="#">Messages</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">logout</a></li>
-			          </ul>
-			        </li>
-			        {{/ifCond}}
-			    </ul>
-		  	</div>
-	  	</div>
+<div class="container-fluid">
+  	<div class="navbar-header">
+  		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+		</button>
+			<a href="/#" class="navbar-brand">Home</a>
+		</div>
+		<div class="collapse navbar-collapse">
+	  	<ul id="header-nav-links" class="nav navbar-nav">
+	  	</ul>
+	  	<ul class="nav navbar-nav navbar-right">
+	  		{{#ifCond role "===" "anonymous"}}
+	        <li><a>Anonymous</a></li>
+	        <li class="dropdown">
+	          <a class="dropdown-toggle">Login <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#"></a></li>
+	            <li><a href="#">Something else here</a></li>
+	          </ul>
+	        </li>
+	        {{else}}
+	        <li><a>{{username}}</a></li>
+	        <li class="dropdown">
+	          <a class="dropdown-toggle">UCenter <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">User Home</a></li>
+	            <li><a href="#">Favor List</a></li>
+	            <li><a href="#">Collections</a></li>
+	            <li><a href="#">Messages</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">logout</a></li>
+	          </ul>
+	        </li>
+	        {{/ifCond}}
+	    </ul>
+  	</div>
+</div>
 </script>
 
 <script id="head-nav-link-template" type="text/x-handlebars-template">

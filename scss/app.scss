@@ -21,6 +21,22 @@
     font-family: microsoft yahei;
 }
 
+#content {
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+#content > .container-fluid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#articles {
+    @include box-shadow(rgba(#101010, 0.4) 10px 10px 15px, rgba(green, 0.2) 0 0 3px 1px inset);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 footer {
     color: #ccc;
     padding: 0.5em 4em;
@@ -32,5 +48,5 @@ footer {
 .article-block {
     margin: 10px 0;
     padding: 15px 7px;
-    @include box-shadow(rgba(#101010, 0.4) 0 0 25px, rgba(green, 0.2) 0 0 3px 1px inset)
+    @include box-shadow(rgba(#101010, 0.4) 10px 10px 15px, rgba(green, 0.2) 0 0 3px 1px inset)
 }
