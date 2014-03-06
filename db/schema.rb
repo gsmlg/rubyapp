@@ -12,16 +12,16 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "wp_commentmeta", primary_key: "meta_id", force: true do |t|
+  create_table "commentmeta", primary_key: "meta_id", force: true do |t|
     t.integer "comment_id", limit: 8,          default: 0, null: false
     t.string  "meta_key"
     t.text    "meta_value", limit: 2147483647
   end
 
-  add_index "wp_commentmeta", ["comment_id"], name: "comment_id", using: :btree
-  add_index "wp_commentmeta", ["meta_key"], name: "meta_key", using: :btree
+  add_index "commentmeta", ["comment_id"], name: "comment_id", using: :btree
+  add_index "commentmeta", ["meta_key"], name: "meta_key", using: :btree
 
-  create_table "wp_comments", primary_key: "comment_ID", force: true do |t|
+  create_table "comments", primary_key: "comment_ID", force: true do |t|
     t.integer  "comment_post_ID",      limit: 8,   default: 0,   null: false
     t.text     "comment_author",       limit: 255,               null: false
     t.string   "comment_author_email", limit: 100, default: "",  null: false
@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "user_id",              limit: 8,   default: 0,   null: false
   end
 
-  add_index "wp_comments", ["comment_approved", "comment_date_gmt"], name: "comment_approved_date_gmt", using: :btree
-  add_index "wp_comments", ["comment_date_gmt"], name: "comment_date_gmt", using: :btree
-  add_index "wp_comments", ["comment_parent"], name: "comment_parent", using: :btree
-  add_index "wp_comments", ["comment_post_ID"], name: "comment_post_ID", using: :btree
+  add_index "comments", ["comment_approved", "comment_date_gmt"], name: "comment_approved_date_gmt", using: :btree
+  add_index "comments", ["comment_date_gmt"], name: "comment_date_gmt", using: :btree
+  add_index "comments", ["comment_parent"], name: "comment_parent", using: :btree
+  add_index "comments", ["comment_post_ID"], name: "comment_post_ID", using: :btree
 
-  create_table "wp_links", primary_key: "link_id", force: true do |t|
+  create_table "links", primary_key: "link_id", force: true do |t|
     t.string   "link_url",                          default: "",  null: false
     t.string   "link_name",                         default: "",  null: false
     t.string   "link_image",                        default: "",  null: false
@@ -58,26 +58,26 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "link_rss",                          default: "",  null: false
   end
 
-  add_index "wp_links", ["link_visible"], name: "link_visible", using: :btree
+  add_index "links", ["link_visible"], name: "link_visible", using: :btree
 
-  create_table "wp_options", primary_key: "option_id", force: true do |t|
+  create_table "options", primary_key: "option_id", force: true do |t|
     t.string "option_name",  limit: 64,         default: "",    null: false
     t.text   "option_value", limit: 2147483647,                 null: false
     t.string "autoload",     limit: 20,         default: "yes", null: false
   end
 
-  add_index "wp_options", ["option_name"], name: "option_name", unique: true, using: :btree
+  add_index "options", ["option_name"], name: "option_name", unique: true, using: :btree
 
-  create_table "wp_postmeta", primary_key: "meta_id", force: true do |t|
+  create_table "postmeta", primary_key: "meta_id", force: true do |t|
     t.integer "post_id",    limit: 8,          default: 0, null: false
     t.string  "meta_key"
     t.text    "meta_value", limit: 2147483647
   end
 
-  add_index "wp_postmeta", ["meta_key"], name: "meta_key", using: :btree
-  add_index "wp_postmeta", ["post_id"], name: "post_id", using: :btree
+  add_index "postmeta", ["meta_key"], name: "meta_key", using: :btree
+  add_index "postmeta", ["post_id"], name: "post_id", using: :btree
 
-  create_table "wp_posts", primary_key: "ID", force: true do |t|
+  create_table "posts", primary_key: "ID", force: true do |t|
     t.integer  "post_author",           limit: 8,          default: 0,         null: false
     t.datetime "post_date",                                                    null: false
     t.datetime "post_date_gmt",                                                null: false
@@ -102,20 +102,20 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "comment_count",         limit: 8,          default: 0,         null: false
   end
 
-  add_index "wp_posts", ["post_author"], name: "post_author", using: :btree
-  add_index "wp_posts", ["post_name"], name: "post_name", using: :btree
-  add_index "wp_posts", ["post_parent"], name: "post_parent", using: :btree
-  add_index "wp_posts", ["post_type", "post_status", "post_date", "ID"], name: "type_status_date", using: :btree
+  add_index "posts", ["post_author"], name: "post_author", using: :btree
+  add_index "posts", ["post_name"], name: "post_name", using: :btree
+  add_index "posts", ["post_parent"], name: "post_parent", using: :btree
+  add_index "posts", ["post_type", "post_status", "post_date", "ID"], name: "type_status_date", using: :btree
 
-  create_table "wp_term_relationships", id: false, force: true do |t|
+  create_table "term_relationships", id: false, force: true do |t|
     t.integer "object_id",        limit: 8, default: 0, null: false
     t.integer "term_taxonomy_id", limit: 8, default: 0, null: false
     t.integer "term_order",                 default: 0, null: false
   end
 
-  add_index "wp_term_relationships", ["term_taxonomy_id"], name: "term_taxonomy_id", using: :btree
+  add_index "term_relationships", ["term_taxonomy_id"], name: "term_taxonomy_id", using: :btree
 
-  create_table "wp_term_taxonomy", primary_key: "term_taxonomy_id", force: true do |t|
+  create_table "term_taxonomy", primary_key: "term_taxonomy_id", force: true do |t|
     t.integer "term_id",     limit: 8,          default: 0,  null: false
     t.string  "taxonomy",    limit: 32,         default: "", null: false
     t.text    "description", limit: 2147483647,              null: false
@@ -123,28 +123,28 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "count",       limit: 8,          default: 0,  null: false
   end
 
-  add_index "wp_term_taxonomy", ["taxonomy"], name: "taxonomy", using: :btree
-  add_index "wp_term_taxonomy", ["term_id", "taxonomy"], name: "term_id_taxonomy", unique: true, using: :btree
+  add_index "term_taxonomy", ["taxonomy"], name: "taxonomy", using: :btree
+  add_index "term_taxonomy", ["term_id", "taxonomy"], name: "term_id_taxonomy", unique: true, using: :btree
 
-  create_table "wp_terms", primary_key: "term_id", force: true do |t|
+  create_table "terms", primary_key: "term_id", force: true do |t|
     t.string  "name",       limit: 200, default: "", null: false
     t.string  "slug",       limit: 200, default: "", null: false
     t.integer "term_group", limit: 8,   default: 0,  null: false
   end
 
-  add_index "wp_terms", ["name"], name: "name", using: :btree
-  add_index "wp_terms", ["slug"], name: "slug", unique: true, using: :btree
+  add_index "terms", ["name"], name: "name", using: :btree
+  add_index "terms", ["slug"], name: "slug", unique: true, using: :btree
 
-  create_table "wp_usermeta", primary_key: "umeta_id", force: true do |t|
+  create_table "usermeta", primary_key: "umeta_id", force: true do |t|
     t.integer "user_id",    limit: 8,          default: 0, null: false
     t.string  "meta_key"
     t.text    "meta_value", limit: 2147483647
   end
 
-  add_index "wp_usermeta", ["meta_key"], name: "meta_key", using: :btree
-  add_index "wp_usermeta", ["user_id"], name: "user_id", using: :btree
+  add_index "usermeta", ["meta_key"], name: "meta_key", using: :btree
+  add_index "usermeta", ["user_id"], name: "user_id", using: :btree
 
-  create_table "wp_users", primary_key: "ID", force: true do |t|
+  create_table "users", primary_key: "ID", force: true do |t|
     t.string   "user_login",          limit: 60,  default: "", null: false
     t.string   "user_pass",           limit: 64,  default: "", null: false
     t.string   "user_nicename",       limit: 50,  default: "", null: false
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "display_name",        limit: 250, default: "", null: false
   end
 
-  add_index "wp_users", ["user_login"], name: "user_login_key", using: :btree
-  add_index "wp_users", ["user_nicename"], name: "user_nicename", using: :btree
+  add_index "users", ["user_login"], name: "user_login_key", using: :btree
+  add_index "users", ["user_nicename"], name: "user_nicename", using: :btree
 
 end

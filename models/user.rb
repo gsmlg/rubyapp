@@ -7,5 +7,11 @@ class User < ActiveRecord::Base
         user
     end
 
+    def self.login(params)
+        user_login = params[:user_login]
+        user_pass = params[:user_pass]
+        self.find(:user_login => user_login, :user_pass => user_pass)
+    end
+
 
 end

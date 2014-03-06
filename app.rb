@@ -47,6 +47,10 @@ class App < Sinatra::Base
     {:role => "anonymous"}.to_json
   end
 
+  post '/role' do
+  	User.login(params)
+  end
+
   get '/menus/:name' do
     name = params[:name]
     getMenus name
@@ -61,7 +65,11 @@ class App < Sinatra::Base
   end
 
   get '/articles/:id' do
-    getAritcles params[:id]
+  	begin
+  		Post.find(params[:id]).to_json
+  	rescue
+  		halt 404
+  	end
   end
 
   get '/addArticles' do
