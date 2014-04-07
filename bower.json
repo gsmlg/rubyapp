@@ -1,0 +1,22 @@
+{
+  "name": "rubyapp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gsmlg/rubyapp",
+  "authors": [
+    "George <gaoshiming@live.com>"
+  ],
+  "description": "rubyapp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "bootstrap-sass-official": "~3.1.1",
+    "modernizr": "~2.7.2"
+  }
+}

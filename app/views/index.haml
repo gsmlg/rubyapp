@@ -1,0 +1,13 @@
+!!!
+%html.no-js{:lang=>'zh_CN','ng-app'=>'AMail'}
+  %head
+    %meta{:charset=>'utf-8'}/
+    %title APP
+    %link{:rel=> "StyleSheet", :href=> "/assets/css/app.css"}
+    %script{:type=> "text/javascript", :src=> "/assets/js/app.js"}
+  %body
+    %noscript
+      %h1 不支持JavaScript无法使用！
+    %div.container-fluid
+      %h1.text-center A-Mail
+      .row{'ng-view'=>''}

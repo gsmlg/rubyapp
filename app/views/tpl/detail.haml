@@ -1,0 +1,14 @@
+%div
+  %strong Subject:
+  | {{message.subject}}
+%div
+  %strong Sender:
+  | {{message.sender}}
+%div
+  %strong Date:
+  | {{message.date}}
+%div
+  %strong To:
+  %span{'ng-repeat'=>'recipient in message.recipients'} {{recipient}}
+%div {{message.message}}
+%a{'href'=>'#/'} Back to message list

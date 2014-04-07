@@ -1,0 +1,15 @@
+%table.table.table-border.table-hover
+  %thead
+    %tr
+      %th
+        %strong Sender
+      %th
+        %strong Subject
+      %th
+        %strong Date
+  %tbody
+    %tr{'ng-repeat'=>'message in messages'}
+      %td {{message.sender}}
+      %td
+        %a{'href'=>'#/view/{{message.id}}'} {{message.subject}}
+      %td {{message.date}}
